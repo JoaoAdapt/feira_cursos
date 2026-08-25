@@ -160,9 +160,12 @@ button,a{font:inherit;color:inherit}a{text-decoration:none}img{display:block;max
 .talent-form{display:grid;gap:15px}
 .field{display:grid;gap:7px}
 .field label{font-size:11px;font-weight:700;letter-spacing:.04em;color:rgba(247,243,237,.78)}
-.field input[type="text"],.field input[type="tel"],.field input[type="email"]{width:100%;min-height:52px;border:1px solid rgba(255,255,255,.11);border-radius:14px;background:rgba(255,255,255,.045);color:#fff;padding:0 15px;font:inherit;font-size:15px;outline:none;transition:border-color .2s ease,background .2s ease,box-shadow .2s ease}
+.field input[type="text"],.field input[type="tel"],.field input[type="email"],.field select{width:100%;min-height:52px;border:1px solid rgba(255,255,255,.11);border-radius:14px;background:rgba(255,255,255,.045);color:#fff;padding:0 15px;font:inherit;font-size:15px;outline:none;transition:border-color .2s ease,background .2s ease,box-shadow .2s ease}
+.field select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,rgba(247,243,237,.7) 50%),linear-gradient(135deg,rgba(247,243,237,.7) 50%,transparent 50%);background-position:calc(100% - 20px) calc(50% - 3px),calc(100% - 14px) calc(50% - 3px);background-size:6px 6px,6px 6px;background-repeat:no-repeat;padding-right:42px;cursor:pointer}
 .field input::placeholder{color:rgba(247,243,237,.28)}
-.field input:focus{border-color:rgba(216,255,63,.75);background:rgba(255,255,255,.065);box-shadow:0 0 0 3px rgba(216,255,63,.09)}
+.field select:invalid{color:rgba(247,243,237,.42)}
+.field select option{color:#111}
+.field input:focus,.field select:focus{border-color:rgba(216,255,63,.75);background:rgba(255,255,255,.065);box-shadow:0 0 0 3px rgba(216,255,63,.09)}
 .file-box{position:relative;border:1px dashed rgba(185,196,232,.34);border-radius:16px;background:rgba(185,196,232,.045);padding:15px;display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:68px;transition:border-color .2s ease,background .2s ease}
 .file-box:hover{border-color:rgba(216,255,63,.48);background:rgba(216,255,63,.035)}
 .file-copy{min-width:0}.file-copy strong{display:block;font-size:12px;color:#fff}.file-copy span{display:block;margin-top:4px;font-size:10px;line-height:1.35;color:rgba(247,243,237,.48);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:330px}
@@ -307,6 +310,20 @@ body.modal-open{overflow:hidden}
       <div class="field full">
         <label for="talentEmail">E-mail</label>
         <input id="talentEmail" name="email" type="email" autocomplete="email" placeholder="voce@email.com" required>
+      </div>
+      <div class="field full">
+        <label for="talentArea">Área em que deseja atuar</label>
+        <select id="talentArea" name="area_desejada" required>
+          <option value="" selected disabled>Selecione</option>
+          <option value="Atendimento">Atendimento</option>
+          <option value="Comercial (vendas)">Comercial (vendas)</option>
+          <option value="Redação e Copywriting">Redação e Copywriting</option>
+          <option value="Gestão de Tráfego">Gestão de Tráfego</option>
+          <option value="Design">Design</option>
+          <option value="Criação de Sites">Criação de Sites</option>
+          <option value="Criação e Edição de Vídeos">Criação e Edição de Vídeos</option>
+          <option value="Administrativo ou RH">Administrativo ou RH</option>
+        </select>
       </div>
       <div class="field file-field">
         <label>Currículo <span style="font-weight:500;color:rgba(247,243,237,.4)">(opcional)</span></label>
